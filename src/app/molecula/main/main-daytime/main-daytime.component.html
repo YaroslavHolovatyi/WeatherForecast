@@ -1,0 +1,9 @@
+<div class="daytime-container">
+    <span class="half-border"></span>
+    <div class="daytime-container__tc">
+        <app-temp [temp]="city.main.temp"></app-temp>
+        <app-clouds [clouds]="city.weather[0].description"></app-clouds>
+    </div>
+    <app-minmax [minmax]='city.main'></app-minmax>
+    <app-description [desc]="city.weather[0].description"></app-description>
+</div>

@@ -1,0 +1,21 @@
+<div class="extendedcityOptions" >
+    <form>
+      <mat-form-field class="half-width">
+        <mat-label>City</mat-label>
+        <input type="text"
+                placeholder="Enter the city"
+                aria-label="City"
+                matInput
+                [formControl]="myControl"
+                [matAutocomplete]="auto"
+                #autocom
+                (keyup)="onCitySearch(autocom.value)"
+                color="accent">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onCitySelect($event.option.value)">
+          <mat-option *ngFor="let option of options" [value]="option.city">
+            {{option.city}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>

@@ -1,0 +1,11 @@
+.date-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    p{
+        display: block;
+        font-size: 24px;
+        font-weight: 200;
+    }
+}

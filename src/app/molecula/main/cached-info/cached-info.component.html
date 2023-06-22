@@ -1,0 +1,13 @@
+<div class="cached">
+    <div class="cached-card" *ngFor="let cachedCity of cachedCitiesString">
+        <h4>{{cachedCity.name}}</h4>
+        <app-date></app-date>
+        <div class="cached-card__footer">
+            <div>
+                <p><b>{{cachedCity.main.temp_min}}</b></p>
+                <p><b>{{cachedCity.main.temp_max}}</b></p>
+            </div>
+            <app-clouds [clouds]="cachedCity.weather[0].description"></app-clouds>
+        </div>
+    </div>
+</div>

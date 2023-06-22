@@ -1,0 +1,10 @@
+<div class="container-main">
+    <div class="main-container" *ngIf="cityToUse">
+        <app-main-header [city]="cityToUse.name"></app-main-header>
+        <app-main-daytime [city]="cityToUse"></app-main-daytime>
+        <app-main-assets [city]="cityToUse"></app-main-assets>
+    </div>
+    <div class="main-cached">
+        <app-cached-info></app-cached-info>
+    </div>
+</div>

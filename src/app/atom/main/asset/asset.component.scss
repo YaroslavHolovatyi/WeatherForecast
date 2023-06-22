@@ -1,0 +1,17 @@
+.asset-container{
+    padding: 29px 26px;;
+    .name{
+
+    }
+    .else{
+        display: flex;
+        gap: 6px;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+}
