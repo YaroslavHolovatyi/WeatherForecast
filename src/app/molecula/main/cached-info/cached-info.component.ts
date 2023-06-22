@@ -35,4 +35,9 @@ export class CachedInfoComponent {
       this.cachedCitiesString = JSON.parse(cachedCities);
     }
   }
+
+  ngOnDestroy(){
+    this.cache.cityAddedEvent.unsubscribe();
+    localStorage.clear()
+  }
 }

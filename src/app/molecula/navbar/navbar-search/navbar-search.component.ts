@@ -17,7 +17,7 @@ export class NavbarSearchComponent {
 
 
   @Input() openAutoSel: boolean | undefined;
-
+  subscribtion: any;
 
   myControl = new FormControl('');
   options: City[] = [];
@@ -40,7 +40,7 @@ export class NavbarSearchComponent {
       const cityCard = this.cache.getFromCash(city)!;
       this.store.dispatch(setCity({ value: cityCard }))
     }else{
-      this.weatherService.searchForCityWeather(city).subscribe({
+      this.subscribtion = this.weatherService.searchForCityWeather(city).subscribe({
         next: (res) => {
           this.store.dispatch(setCity({ value: res }));
           this.cache.saveToCache(res);
@@ -48,7 +48,12 @@ export class NavbarSearchComponent {
       },
         error: (rej) => {console.error(rej)}
       });
+      this.subscribtion;
     }
+  }
+
+  ngOnDestroy(){
+    this.subscribtion.unsubscribe()
   }
 
 }

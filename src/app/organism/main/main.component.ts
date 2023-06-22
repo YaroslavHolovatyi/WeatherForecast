@@ -10,7 +10,7 @@ import { WeatherService } from 'src/app/supplies/services/weather.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-
+  subscripbtion: any;
   cityToUse: any;
   cityStore$: Observable<any>;
 
@@ -29,12 +29,17 @@ export class MainComponent {
   }
 
   firstCity(){
-    this.weatherService.searchForCityWeather("Lviv").subscribe({
+    this.subscripbtion = this.weatherService.searchForCityWeather("Lviv").subscribe({
       next: (res) => {
        this.cityToUse = res;
     },
       error: (rej) => {console.error(rej)}
     });
+    this.subscripbtion;
+  }
+
+  ngOnDestroy(){
+    this.subscripbtion.unsubscribe();
   }
   
 }

@@ -50,4 +50,8 @@ import { CityCard } from '../interfaces/city-info.interface';
         }     
        return cities.includes(city.name);
     }
+
+    ngOnDestroy(){
+        localStorage.clear()
+    }
   }
